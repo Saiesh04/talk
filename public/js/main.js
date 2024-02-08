@@ -595,17 +595,6 @@ async function getDataFromIDB() {
 	return history
 }
 
-async function displayFromIndexedDB() {
-	let data = await getDataFromIDB()
-	data.forEach((element) => {
-		let friend = element.friend
-		let message = element.message
-		let id = element.id
-		let timestamp = element.timestamp
-		loadMessages(message, friend, id, timestamp)
-		scrollToBottom()
-	})
-}
 
 function getMessageEncoding() {
 	const messageBox = document.querySelector(".aes-ctr #message")
